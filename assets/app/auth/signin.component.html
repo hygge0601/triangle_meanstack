@@ -1,0 +1,48 @@
+
+<br><br><br><br><br><br><br>
+<div class="signindiv">
+    <div class="container">
+        <div class="col-md-4 col-md-offset-4">
+            <a href="/">
+                <img src="/images/Banner2.png" class="titleimg">
+            </a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="col-md-4 col-md-offset-4">
+            <br>
+            <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <input
+                            type="text"
+                            id="id"
+                            class="form-control"
+                            placeholder="Triangle ID"
+                            formControlName="id">
+                </div>
+                <div class="form-group">
+                    <input
+                            type="password"
+                            id="password"
+                            class="form-control"
+                            placeholder="Password"
+                            formControlName="password">
+                </div>
+                <h5>{{errMsg}}</h5>
+                <button
+                        class="btn btn-primary signin-btn"
+                        type="submit"
+                        [disabled]="!myForm.valid">Submit</button>
+            </form>
+            <br>
+            <ul class="list-inline signlist">
+                <li routerLinkActive="active"><a [routerLink]="['../signup']">Sign Up</a></li>
+                <li class="footer-menu-driver">|</li>
+                <li routerLinkActive="active"><a [routerLink]="['../../forgot/id']">Forgot Id</a></li>
+                <li class="footer-menu-driver">|</li>
+                <li routerLinkActive="active"><a [routerLink]="['../../forgot/password']">Forgot Password</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

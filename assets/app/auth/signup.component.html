@@ -1,0 +1,65 @@
+<br><br><br><br><br><br><br>
+<div class="signindiv">
+    <div class="container">
+        <div class="col-md-4 col-md-offset-4">
+            <a href="/">
+                <img src="/images/Banner2.png" class="titleimg">
+            </a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="col-md-4 col-md-offset-4">
+            <br>
+            <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <input
+                            type="text"
+                            id="id"
+                            class="form-control"
+                            placeholder="Triangle ID"
+                            formControlName="id">
+                </div>
+                <div class="form-group">
+                    <input
+                            type="password"
+                            id="password"
+                            class="form-control"
+                            placeholder="Password"
+                            formControlName="password">
+                </div>
+                <div class="row">
+                    <div class="form-group col-lg-6">
+                        <input
+                                type="text"
+                                id="firstName"
+                                class="form-control"
+                                placeholder="First Name"
+                                formControlName="firstName">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input
+                                type="text"
+                                id="lastName"
+                                class="form-control"
+                                placeholder="Last Name"
+                                formControlName="lastName">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input
+                            type="email"
+                            id="email"
+                            class="form-control"
+                            placeholder="Email"
+                            formControlName="email">
+                </div>
+                <h5 *nfIf >{{errMsg}}</h5>
+                <button
+                        class="btn btn-primary signup-btn"
+                        type="submit"
+                        [disabled]="!myForm.valid">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>

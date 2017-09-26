@@ -1,0 +1,25 @@
+<hr>
+<div class="rankData">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>No.</th>
+            <th>Image</th>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Site</th>
+            <th>Count</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let g9 of rankes">
+            <td *ngIf="g9.site === 'g9'">{{g9.no}}</td>
+            <td *ngIf="g9.site === 'g9'"><img src="{{g9.img}}" width="20" height="20"></td>
+            <td *ngIf="g9.site === 'g9'"><a href="{{g9.url}}">{{g9.title}}</a></td>
+            <td *ngIf="g9.site === 'g9'">{{g9.category}}</td>
+            <td *ngIf="g9.site === 'g9'">{{g9.site}}</td>
+            <td *ngIf="g9.site === 'g9'">{{g9.count}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

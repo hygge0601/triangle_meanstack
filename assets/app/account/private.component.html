@@ -1,0 +1,34 @@
+<header class="bannerheader">
+    My Profile
+</header>
+
+<div class="myprofilediv">
+    <div class="container">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="image-upload">
+                <br>
+                <div class="upload-btn">
+                    <label for="fileinput">
+                        <img src="{{user.img}}" width="200" height="200">
+                    </label>
+                    <input id="fileinput" type="file" (change)="fileChangeEvent($event)" placeholder="Upload file...">
+                </div>
+                <div class="submit-btn">
+                    <button class="btn btn-primary" type="button" (click)="upload()">Upload</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <br>
+        <div class="col-md-4 col-md-offset-4 divtextcenter">
+            <input  class="form-control" type="text" [(ngModel)]="user.firstName" id="nameinput1">
+            <input class="form-control" type="text" [(ngModel)]="user.lastName" id="nameinput2">
+            <input class="form-control" type="email" [(ngModel)]="user.email" id="nameinput3">
+            <div class="myinfo-btn">
+                <button class="btn btn-primary" (click)="onEdit()">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>

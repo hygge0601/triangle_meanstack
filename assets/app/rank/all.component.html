@@ -1,0 +1,25 @@
+<hr>
+<div class="rankData">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Image</th>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Site</th>
+                <th>Count</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let all of rankes">
+                <td>{{all.no}}</td>
+                <td><img src="{{all.img}}" width="20" height="20"></td>
+                <td><a href="{{all.url}}">{{all.title}}</a></td>
+                <td>{{all.category}}</td>
+                <td>{{all.site}}</td>
+                <td>{{all.count}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,34 @@
+<div class="nav">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">Triangle</a>
+    </div>
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+            <li class="active" *ngIf="isSignnedIn()">
+                <a href="/myAccount">
+                    <img class="userImg" src="{{image}}" width="20" height="20">
+                </a>
+            </li>
+            <li *ngIf="isSignnedIn()"><a href="#">{{username}}</a></li>
+            <li *ngIf="!isSignnedIn()"><a href="/auth/signin">Sign In</a></li>
+            <li *ngIf="isSignnedIn()"><a (click)="onSignout()">Sign Out</a></li>
+        </ul>
+    </div>
+</div>
+<header class="row">
+    <ul class="nav nav-pills">
+        <li routerLinkActive="active" class="rankMenu"><a [routerLink]="['all']">All</a></li>
+        <li routerLinkActive="active" class="rankMenu"><a [routerLink]="['auction']">Auction</a></li>
+        <li routerLinkActive="active" class="rankMenu"><a [routerLink]="['timon']">TicketMonster</a></li>
+        <li routerLinkActive="active" class="rankMenu"><a [routerLink]="['g9']">G9</a></li>
+    </ul>
+</header>
+<div class="row spacing">
+    <router-outlet></router-outlet>
+</div>

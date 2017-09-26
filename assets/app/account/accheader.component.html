@@ -1,0 +1,32 @@
+<div class="nav">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">Triangle</a>
+    </div>
+    <div class="navbar-collapse collapse">
+
+        <ul class="nav navbar-nav navbar-center">
+            <li routerLinkActive="active" class="searchMenu"><a [routerLink]="['password']">Password</a></li>
+            <li routerLinkActive="active" class="searchMenu"><a [routerLink]="['private']">Private</a></li>
+            <li routerLinkActive="active" class="searchMenu"><a [routerLink]="['activity']">Activity</a></li>
+            <li routerLinkActive="active" class="searchMenu"><a [routerLink]="['delete']">Delete Account</a></li>
+        </ul>
+
+
+        <ul class="nav navbar-nav navbar-right">
+            <li class="active" *ngIf="isSignnedIn()">
+                <a href="/myAccount">
+                    <img class="userImg" src="{{image}}" width="20" height="20">
+                </a>
+            </li>
+            <li *ngIf="isSignnedIn()"><a href="#">{{username}}</a></li>
+            <li *ngIf="!isSignnedIn()"><a href="/auth/signin">Sign In</a></li>
+            <li *ngIf="isSignnedIn()"><a (click)="onSignout()">Sign Out</a></li>
+        </ul>
+    </div>
+</div>

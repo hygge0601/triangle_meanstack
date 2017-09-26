@@ -1,0 +1,18 @@
+<header class="bannerheader">
+    My Activity Log
+</header>
+
+<div class="container">
+    <div class="col-md-8 col-md-offset-2">
+        <div *ngFor="let log of activities">
+            <hr>
+            <h4>{{log.keyword}}({{log.date}})</h4>
+            <hr>
+            <h5><a href="{{log.no1_url}}">{{log.no1}}</a></h5>
+            <h5><a href="{{log.no2_url}}">{{log.no2}}</a></h5>
+            <h5><a href="{{log.no3_url}}">{{log.no3}}</a></h5>
+            <br><br>
+        </div>
+    </div>
+</div>
+

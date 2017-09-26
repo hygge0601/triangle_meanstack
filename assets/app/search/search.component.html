@@ -1,0 +1,71 @@
+<div class="nav">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">Triangle</a>
+    </div>
+    <div class="navbar-collapse collapse">
+
+        <div class="col-md-6 searchmiddle">
+            <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <input
+                            type="text"
+                            id="keyword"
+                            class="form-control"
+                            placeholder="{{keyword}}"
+                            formControlName="keyword">
+                    <span class="glyphicon glyphicon-search form-control-feedback" id="searchicon"></span>
+                </div>
+            </form>
+        </div>
+
+        <ul class="nav navbar-nav navbar-right">
+            <li class="active" *ngIf="isSignnedIn()">
+                <a href="/myAccount">
+                    <img class="userImg" src="{{image}}" width="20" height="20">
+                </a>
+            </li>
+            <li *ngIf="isSignnedIn()"><a href="#">{{username}}</a></li>
+            <li *ngIf="!isSignnedIn()"><a href="/auth/signin">Sign In</a></li>
+            <li *ngIf="isSignnedIn()"><a (click)="onSignout()">Sign Out</a></li>
+        </ul>
+    </div>
+</div>
+<hr>
+<div class="rankData">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Site</th>
+                <th>Category</th>
+                <th>Count</th>
+                <th>Price</th>
+                <th>Shop</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let search of searches">
+                <td><a href="{{search.url}}">{{search.title}}</a></td>
+                <td>{{search.site}}</td>
+                <td>{{search.category}}</td>
+                <td>{{search.count}}</td>
+                <td>{{search.price}}</td>
+                <td>{{search.shop}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <!--<ul *ngFor="let search of searches">-->
+        <!--<li>{{search.title}}</li>-->
+        <!--<li>{{search.site}}</li>-->
+        <!--<li>{{search.category}}</li>-->
+        <!--<li>{{search.count}}</li>-->
+        <!--<li>{{search.price}}</li>-->
+        <!--<li>{{search.shop}}</li>-->
+    <!--</ul>-->
+</div>

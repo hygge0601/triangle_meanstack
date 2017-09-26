@@ -1,0 +1,25 @@
+<hr>
+<div class="rankData">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>No.</th>
+            <th>Image</th>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Site</th>
+            <th>Count</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let timon of rankes">
+            <td *ngIf="timon.site === 'ticketmonster'">{{timon.no}}</td>
+            <td *ngIf="timon.site === 'ticketmonster'"><img src="{{timon.img}}" width="20" height="20"></td>
+            <td *ngIf="timon.site === 'ticketmonster'"><a href="{{timon.url}}">{{timon.title}}</a></td>
+            <td *ngIf="timon.site === 'ticketmonster'">{{timon.category}}</td>
+            <td *ngIf="timon.site === 'ticketmonster'">{{timon.site}}</td>
+            <td *ngIf="timon.site === 'ticketmonster'">{{timon.count}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

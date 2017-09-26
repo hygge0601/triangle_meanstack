@@ -1,0 +1,25 @@
+<hr>
+<div class="rankData">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>No.</th>
+            <th>Image</th>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Site</th>
+            <th>Count</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let auction of rankes">
+            <td *ngIf="auction.site === 'auction'">{{auction.no}}</td>
+            <td *ngIf="auction.site === 'auction'"><img src="{{auction.img}}" width="20" height="20"></td>
+            <td *ngIf="auction.site === 'auction'"><a href="{{auction.url}}">{{auction.title}}</a></td>
+            <td *ngIf="auction.site === 'auction'">{{auction.category}}</td>
+            <td *ngIf="auction.site === 'auction'">{{auction.site}}</td>
+            <td *ngIf="auction.site === 'auction'">{{auction.count}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
